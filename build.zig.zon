@@ -1,0 +1,21 @@
+.{
+    .name = "dailyroll",
+    .version = "0.0.0",
+    .dependencies = .{
+        .thermal = .{
+            .path = "../thermal",
+        },
+        .elio = .{
+            .path = "../elio",
+        },
+        .curl = .{
+            .url = "https://github.com/shnupta/zig-curl/archive/6d0e738254c75e61135ed841011cdd49d18635c0.tar.gz",
+            .hash = "1220d9d8cf51f1d565656843d721a6749c2d08a32ae01dc662192abaccbf2dedeaa1",
+        },
+    },
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+    },
+}
