@@ -29,7 +29,7 @@ const Response = struct {
 
 pub fn getTickerData(easy: curl.Easy, api_key: []const u8, allocator: std.mem.Allocator, tickers: [][]const u8) !Data {
     var results = std.ArrayList(Data.PreviousDay).init(allocator);
-    results.deinit();
+    defer results.deinit();
 
     for (tickers) |ticker| {
         const url = try std.fmt.allocPrintZ(allocator, "https://api.polygon.io/v2/aggs/ticker/{s}/prev?adjusted=true&apiKey={s}", .{ ticker, api_key });
