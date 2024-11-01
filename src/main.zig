@@ -223,7 +223,7 @@ pub fn main() !void {
     const year: u32 = @intCast(localtime.tm_year + 1900);
     const month: u8 = @intCast(localtime.tm_mon + 1);
     const day: u8 = @intCast(localtime.tm_mday);
-    const today = try std.fmt.allocPrint(allocator, "{d}-{d:0<2}-{d:0<2}", .{ year, month, day });
+    const today = try std.fmt.allocPrint(allocator, "{d}-{d:0>2}-{d:0>2}", .{ year, month, day });
     defer allocator.free(today);
 
     var data = Data{
